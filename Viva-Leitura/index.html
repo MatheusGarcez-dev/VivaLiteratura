@@ -16,7 +16,7 @@
         }
 
         :root {
-            --primary: #FF4DA6;
+            --primary: #FF0C85;
             --primary-dark: #E63D8F;
             --secondary: #FFD6E7;
             --dark: #0A0A0A;
@@ -988,8 +988,8 @@
                 <h3 class="pricing-title">Acesso Premium</h3>
                 <p style="color: var(--gray); margin-bottom: 32px;">Entre em contato para conhecer nossos planos e valores personalizados</p>
              <DIV class="preco">
-                    <p class="preco-p">De R$59,90</p>
-                    <h1 class="preco-t">Por R$37,90</h1>
+                    <p class="preco-p">De R$70,00</p>
+                    <h1 class="preco-t">Por R$47,90</h1>
                 </DIV>
                 <ul class="pricing-features">
                     <li>100.000+ livros disponíveis</li>
@@ -1019,10 +1019,10 @@
                 <p style="color: var(--gray); margin-bottom: 32px;">Entre em contato para conhecer nossos planos e valores personalizados</p>
                   <DIV class="preco">
                     <p class="preco-p">De R$29,90</p>
-                    <h1 class="preco-t">Por R$14,90</h1>
+                    <h1 class="preco-t">Por R$19,90</h1>
                 </DIV>
                 <ul class="pricing-features">
-                    <li>200 livros disponíveis</li>
+                    <li>150 livros disponíveis</li>
                     <li>Acesso ilimitado em todos os dispositivos</li>
                     <li>Download offline sem restrições</li>
                     <li>Suporte 24 horas</li>  
@@ -1073,7 +1073,7 @@
                 </div>
                 <div class="faq-item fade-in">
                     <h3>👥 Como funciona o programa de indicação?</h3>
-                    <p>Após se tornar membro, você recebe um código exclusivo. Cada indicação bem-sucedida gera descontos progressivos: 1 indicação = 60% off, 3 indicações = acesso 100% gratuito.</p>
+                    <p>Após se tornar membro, você recebe um código exclusivo. Cada indicação bem-sucedida gera descontos progressivos: 1 indicação = 50% off, 1 indicação = acesso 100% gratuito.</p>
                 </div>
                 <div class="faq-item fade-in">
                     <h3>📖 Que tipo de conteúdo está disponível?</h3>
@@ -1087,6 +1087,401 @@
         </div>
     </section>
 
+<!-- ============================================================
+     SEÇÃO: INDIQUE E GANHE — cole antes do </body> ou onde desejar
+     ============================================================ -->
+
+<style>
+  /* ── Indique & Ganhe ───────────────────────────────────────── */
+  .referral-section {
+    padding: 120px 0;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* fundo decorativo radial */
+  .referral-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255, 12, 133, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* grid de bolinhas */
+  .referral-bg-dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 12, 133, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .referral-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── card central ───────────────────────────────────────────── */
+  .referral-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--dark-light);
+    border: 1px solid rgba(255, 12, 133, 0.25);
+    border-radius: 20px;
+    padding: 72px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(255, 12, 133, 0.08);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+
+  .referral-card:hover {
+    border-color: rgba(255, 12, 133, 0.5);
+    box-shadow: 0 0 100px rgba(255, 12, 133, 0.15);
+  }
+
+  /* linha de destaque no topo */
+  .referral-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--primary), transparent);
+  }
+
+  /* ── badge ─────────────────────────────────────────────────── */
+  .referral-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 12, 133, 0.1);
+    border: 1px solid rgba(255, 12, 133, 0.25);
+    color: var(--primary);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  /* ── emoji grande ───────────────────────────────────────────── */
+  .referral-emoji {
+    font-size: 72px;
+    margin-bottom: 24px;
+    display: block;
+    animation: floatEmoji 3s ease-in-out infinite;
+  }
+
+  @keyframes floatEmoji {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  /* ── título ─────────────────────────────────────────────────── */
+  .referral-title {
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  /* ── subtítulo ─────────────────────────────────────────────── */
+  .referral-subtitle {
+    font-size: 18px;
+    color: var(--gray);
+    line-height: 1.75;
+    max-width: 580px;
+    margin: 0 auto 48px;
+  }
+
+  /* ── passos ─────────────────────────────────────────────────── */
+  .referral-steps {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+  }
+
+  .step {
+    background: rgba(255, 12, 133, 0.06);
+    border: 1px solid rgba(255, 12, 133, 0.15);
+    border-radius: 14px;
+    padding: 28px 24px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.35s ease;
+    position: relative;
+  }
+
+  .step:hover {
+    background: rgba(255, 12, 133, 0.12);
+    border-color: var(--primary);
+    transform: translateY(-6px);
+  }
+
+  /* seta entre passos */
+  .step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgba(255, 12, 133, 0.4);
+  }
+
+  .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0 auto 14px;
+  }
+
+  .step-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .step h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #fff;
+  }
+
+  .step p {
+    font-size: 12px;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── destaque do desconto ───────────────────────────────────── */
+  .referral-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, rgba(255, 12, 133, 0.15), rgba(255, 214, 231, 0.08));
+    border: 1px solid rgba(255, 12, 133, 0.3);
+    border-radius: 16px;
+    padding: 20px 36px;
+    margin-bottom: 48px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .referral-highlight .discount {
+    font-size: 38px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── botão WhatsApp ─────────────────────────────────────────── */
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: #fff;
+    padding: 20px 48px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid #25D366;
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.25);
+  }
+
+  .btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(37, 211, 102, 0.35);
+  }
+
+  .btn-whatsapp svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    flex-shrink: 0;
+  }
+
+  /* ── instrução da mensagem ──────────────────────────────────── */
+  .referral-instruction {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  .referral-instruction strong {
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .msg-bubble {
+    display: inline-block;
+    background: rgba(255, 12, 133, 0.08);
+    border: 1px solid rgba(255, 12, 133, 0.2);
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── garantia rodapé ────────────────────────────────────────── */
+  .referral-footer-note {
+    margin-top: 36px;
+    font-size: 13px;
+    color: rgba(102, 102, 102, 0.8);
+  }
+
+  /* ── responsivo ─────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .referral-card {
+      padding: 48px 24px;
+    }
+
+    .referral-title {
+      font-size: 32px;
+    }
+
+    .referral-steps {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .step {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .step:not(:last-child)::after {
+      content: '↓';
+      right: auto;
+      left: 50%;
+      top: auto;
+      bottom: -22px;
+      transform: translateX(-50%);
+    }
+
+    .referral-highlight {
+      flex-direction: column;
+      gap: 6px;
+      padding: 18px 24px;
+    }
+  }
+</style>
+
+<!-- ── SEÇÃO ─────────────────────────────────────────────────── -->
+<section class="referral-section">
+  <div class="referral-bg-dots"></div>
+  <div class="container referral-inner">
+    <div class="referral-card fade-in">
+
+      <div class="referral-badge">
+        <span style="width:8px;height:8px;background:var(--primary);border-radius:50%;display:inline-block;"></span>
+        Programa de Indicação
+      </div>
+
+      <span class="referral-emoji">🎁</span>
+
+      <h2 class="referral-title">
+        Indique e ganhe<br>
+        <span class="gradient-text">50% de desconto!</span>
+      </h2>
+
+      <p class="referral-subtitle">
+        Simples assim: indique um amigo, ele assina qualquer plano e você ganha <strong style="color:#fff;">50% de desconto</strong> na sua próxima renovação. Quanto mais indica, mais você economiza!
+      </p>
+
+      <!-- passos -->
+      <div class="referral-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <span class="step-icon">🗣️</span>
+          <h4>Indique um amigo</h4>
+          <p>Compartilhe o link ou fale sobre a Viva Leitura</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <span class="step-icon">✅</span>
+          <h4>Ele compra</h4>
+          <p>Seu indicado assina qualquer plano da plataforma</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <span class="step-icon">🎉</span>
+          <h4>Você ganha</h4>
+          <p>50% de desconto aplicado automaticamente para você</p>
+        </div>
+      </div>
+
+      <!-- destaque -->
+      <div class="referral-highlight">
+        <span>Seu benefício:</span>
+        <span class="discount">50% OFF</span>
+        <span>garantido 🔥</span>
+      </div>
+
+      <!-- botão -->
+      <a
+        href="https://wa.me/5513999999999?text=Ol%C3%A1!%20Quero%20indicar%20algu%C3%A9m%20e%20ganhar%2050%25%20de%20desconto.%20Desconto"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-whatsapp"
+      >
+        <!-- ícone WhatsApp inline SVG -->
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.003 2.667C8.637 2.667 2.667 8.637 2.667 16c0 2.37.637 4.6 1.74 6.533L2.667 29.333l6.96-1.72A13.264 13.264 0 0016.003 29.333c7.363 0 13.33-5.97 13.33-13.333 0-7.363-5.967-13.333-13.33-13.333zm0 24c-2.09 0-4.047-.56-5.727-1.533l-.41-.24-4.133 1.02 1.053-4.013-.267-.427A10.624 10.624 0 015.333 16c0-5.887 4.78-10.667 10.667-10.667S26.667 10.113 26.667 16 21.887 26.667 16.003 26.667zm5.853-7.973c-.32-.16-1.893-.933-2.187-1.04-.293-.107-.507-.16-.72.16-.213.32-.827 1.04-.987 1.227-.16.187-.32.213-.64.053-.32-.16-1.347-.497-2.567-1.587-.947-.847-1.587-1.893-1.773-2.213-.187-.32-.02-.493.14-.653.147-.147.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.733-.987-2.373-.26-.627-.52-.54-.72-.547h-.613c-.213 0-.56.08-.853.4-.293.32-1.12 1.093-1.12 2.667s1.147 3.093 1.307 3.307c.16.213 2.267 3.453 5.493 4.84.767.333 1.367.533 1.833.68.773.24 1.473.207 2.027.127.62-.093 1.893-.773 2.16-1.52.267-.747.267-1.387.187-1.52-.08-.133-.293-.213-.613-.373z"/>
+        </svg>
+        Resgatar meu desconto no WhatsApp
+      </a>
+
+      <!-- instrução -->
+      <div class="referral-instruction">
+        Ao entrar no chat, envie a mensagem:<br>
+        <div class="msg-bubble">💬 &nbsp;"Desconto"</div>
+        <br>
+        Confirmaremos a compra do seu indicado e aplicaremos o <strong>50% OFF</strong> na hora.
+      </div>
+
+      <p class="referral-footer-note">
+        ✓ Sem limite de indicações &nbsp;•&nbsp; ✓ Desconto cumulativo &nbsp;•&nbsp; ✓ Válido para qualquer plano
+      </p>
+
+    </div>
+  </div>
+</section>
+<!-- ============================================================
+     FIM DA SEÇÃO INDIQUE E GANHE
+     ============================================================ -->
+    
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
